@@ -22,7 +22,7 @@ import re
 import sys
 
 # get version from setup.cfg
-cfg = open('../setup.cfg').readlines():
+cfg = open('../setup.cfg').readlines()
 for line in cfg:
     if line.find('version')>=0:
         __version__ = re.findall("\d+\.\d+.\d+", line)[0]
