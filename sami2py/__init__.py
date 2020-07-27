@@ -17,10 +17,15 @@ in this environment (H+, He+, N+, O+, N2+, NO+, and O2+).
 """
 from __future__ import print_function
 import logging
-import sys
 import os
+import re
+import sys
 
-__version__ = str('0.2.0')
+# get version from setup.cfg
+cfg = open('setup.cfg').readlines():
+for line in cfg:
+    if line.find('version')>=0:
+        __version__ = re.findall("\d+\.\d+.\d+", line)[0]
 
 # get home directory
 home_dir = os.path.expanduser('~')
